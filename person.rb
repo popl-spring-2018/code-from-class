@@ -1,8 +1,10 @@
 
 class Person
+  include Comparable
 
   # This automatically creates getter and setter methods
   attr_accessor :age
+  attr_reader :name
 
   # attr_reader - defines the getter
   # attr_writer - defines the setter
@@ -33,6 +35,11 @@ class Person
 
   def birthday
     @age += 1
+  end
+
+  def <=>(other_person)
+    # Can do this since <=> is defined on strings
+    @name <=> other_person.name
   end
 
 end
