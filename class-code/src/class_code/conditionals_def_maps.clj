@@ -1,4 +1,4 @@
-(ns clojure-for-class.conditionals-def-maps)
+(ns class-code.conditionals-def-maps)
 
 ; if: if first argument is true, does first thing; otherwise, do second thing
 (if (< 1 4)

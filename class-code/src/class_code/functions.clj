@@ -1,4 +1,4 @@
-(ns clojure-for-class.functions)
+(ns class-code.functions)
 
 ; let: allows you to assign values to symbols within a lexical context
 ; let is your friend and you should use it often!

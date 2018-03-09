@@ -1,4 +1,4 @@
-(ns clojure-for-class.recursion)
+(ns class-code.recursion)
 
 (def nums (range 4 12))
 

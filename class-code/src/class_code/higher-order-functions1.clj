@@ -1,4 +1,4 @@
-(ns clojure-for-class.higher-order-functions1)
+(ns class-code.higher-order-functions1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Range gives a list of numbers in a range

@@ -1,4 +1,4 @@
-(ns clojure-for-class.higher-order-functions2)
+(ns class-code.higher-order-functions2)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Practice as a class:
