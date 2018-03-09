@@ -23,20 +23,9 @@
     - expression is the Clojure expression given to the REPL"
   [state expression]
   (if (not (seq? expression))
-    (if (symbol? expression)
-      (assoc state :return (get (:environment state) expression))
-      (assoc state :return expression))
-    (let [env (:environment state)
-          f (first expression)]
-      (cond
-        (= f '+) (assoc state :return (apply + (map #(:return (my-eval state %))
-                                                    (rest expression))))
-        (= f 'def) {:environment (assoc env
-                                        (second expression)
-                                        (:return (my-eval state
-                                                          (nth expression 2))))
-                    :return (second expression)}
-        :else (assoc state :return "Error: That function is not defined.")))))
+    (assoc state :return expression)
+    (cond
+      (= (first expression) '+) (assoc state :return (apply + (rest expression))))))
 
 (defn repl
   "Implements a REPL without using eval"
