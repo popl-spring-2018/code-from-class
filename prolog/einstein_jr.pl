@@ -11,4 +11,3 @@ einstein_jr(Solution) :-
     member(house(_, red, giraffe), Solution),
     member(house(h1, blue, _), Solution),
     member(house(_, _, elephant), Solution).
-
