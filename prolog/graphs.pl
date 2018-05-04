@@ -104,3 +104,27 @@ subset([H|T], [H|S]) :- subset(T, S).
 % How would we get a list of all subsets of a list?
 allSubsets(List, SubsetsList) :-
     findall(S, subset(List, S), SubsetsList).
+
+
+pathList(X, Y, Path) :- pathNoRepeatsList(X, Y, [X], Path).
+
+pathNoRepeatsList(X, X, _, [X]).
+pathNoRepeatsList(X, Y, Visited, [X|Path]) :-
+    edge(X, Z),
+    \+ member(Z, Visited),
+    pathNoRepeatsList(Z, Y, [Z | Visited], Path).
+
+% Shortest path from one node to another
+
+allPaths(X, Y, Paths) :-
+    findall(Path, pathList(X, Y, Path), Paths).
+
+shortestList(Lists, LengthShortest) :-
+    maplist(length, Lists, LengthOfLists),
+    min_list(LengthOfLists, LengthShortest).
+
+shortestPath(X, Y, ShortestPath) :-
+    allPaths(X, Y, Paths),
+    shortestList(Paths, ShortestLength),
+    member(ShortestPath, Paths),
+    length(ShortestPath, ShortestLength).
